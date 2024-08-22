@@ -1,0 +1,170 @@
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: square inside none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.top_container {
+    position: relative;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    justify-content: center; /* Centers grid items horizontally */
+    align-items: center;
+    height: 90vh;
+}
+
+.window {
+    width: 80%;
+    height: 80%;
+    background-image: url('images/container_1/Desktophintergrund.jpg');
+    background-size: cover;
+    background-position: center;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25%); /* Creates a responsive grid */
+    justify-content: center; 
+    align-items: center;
+    gap: 5%; /* Adds space between items */
+    height: 100%;
+}
+
+.clickable {
+    width: 100%;
+    height: 80%;
+    background-image: url('images/container_1/Desktophintergrund.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 25px;
+    opacity: 0; /* Start as invisible */
+    /* transform: translateY(200px); /* Start off-screen */
+    transition: opacity 1s ease, transform 1s ease;
+    gap: 20px;
+}
+
+.clickable.translate_top {
+    transform: translateY(0);
+}
+
+.clickable.visible {
+    opacity: 1;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.clickable.invisible {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.clickable:hover {
+    opacity: 0.5;
+}
+
+/* Modal window styling */
+.modal {
+    display: none; /* Hidden by default */
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;  /* Stay in place */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    border: 1px solid #888;
+    height: 60%;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;;
+}
+
+.modal-content.visible {
+    opacity: 1;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Close button styling */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bottom_container {
+    position: absolute;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -80vh;
+}
+
+footer {
+    text-align: center;
+}
+
